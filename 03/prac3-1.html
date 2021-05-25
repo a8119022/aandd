@@ -10,8 +10,22 @@
 
     <script>
         function runButtonPressed() {
+            var numbers = [];
+
             //prac3-1 10個の乱数の合計を求める（繰り返しで）
+            var answer = 0;
+            for(var k = 0; k < 10; k++){
+                var x = Math.round(Math.random()*100);
+                numbers.push(x);
+                console.log(x);
+                answer = answer + numbers[k];
+            }
+            show(numbers);
+            numbers.push(answer);
+            show(numbers);
+
             //prac3-2 10個の乱数の平均を求める
+            
             //prac3-3 10個の乱数の最大値を求める
             //prac3-4 10個の乱数の最小値を求める
         }
