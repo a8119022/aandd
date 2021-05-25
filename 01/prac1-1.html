@@ -11,10 +11,34 @@
     <script>
         function runButtonPressed() {
             var numbers = [];
+
             //prac1-1 0を10個挿入する
+            // for(var j = 0; j < 10; j++){ 
+            //     numbers.push(0);
+            //     console.log(numbers);
+            // }
+
             //prac1-2 乱数を10個挿入する
+            // for(var j = 0; j < 10; j++){ 
+            //     var x = Math.round(Math.random()*100);
+            //     numbers.push(x);
+            //     console.log(x);
+            // }
+
             //prac1-3 '田中'を10個挿入する
+            // for(var j = 0; j < 10; j++){
+            //     var html = '田中';
+            //     numbers.push(html);
+            //     console.log(html);
+            // }
+
             //prac1-4 1から20までの数を順に20個挿入する
+            var x = 1;
+            for(var j = 0; j < 20; j++){
+                numbers.push(x);
+                console.log(x);
+                x = x + 1;
+            }
             show(numbers);
         }
     </script>
