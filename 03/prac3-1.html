@@ -11,23 +11,42 @@
     <script>
         function runButtonPressed() {
             var numbers = [];
-
+            var total = 0;
             //prac3-1 10個の乱数の合計を求める（繰り返しで）
-            var answer = 0;
+            createRandomNumbers(numbers, 10); //10個の乱数を作成して配列させる
+            show(numbers);
+
             for(var k = 0; k < 10; k++){
-                var x = Math.round(Math.random()*100);
-                numbers.push(x);
-                console.log(x);
-                answer = answer + numbers[k];
+                total = total + numbers[k];
             }
-            show(numbers);
-            numbers.push(answer);
-            show(numbers);
+            console.log(total);
+            show(total);
 
             //prac3-2 10個の乱数の平均を求める
-            
+            var answer = total / numbers.length;
+            console.log(answer);
+            show(answer);
+
             //prac3-3 10個の乱数の最大値を求める
+            var max = 0;
+            console.log(max);
+            for(var j = 0; j < numbers.length; j++){
+                if(max < numbers[j]){
+                    max = numbers[j];
+                    console.log(max);
+                }
+            }
+            show(max);
+
             //prac3-4 10個の乱数の最小値を求める
+            var min = 1000000;
+            for(var i = 0; i < numbers.length; i++){
+                if(numbers[i] < min){
+                    min = numbers[i];
+                    console.log(min);
+                }
+            }
+            show(min);
         }
     </script>
 
