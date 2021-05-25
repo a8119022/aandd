@@ -11,11 +11,56 @@
     <script>
         function runButtonPressed() {
             //prac2-1 10個の順数（１，２，３．．．の数列）を生成し，２番目と４番目を入れ替える
+            var numbers = [];
+            var numbers1 = [];
+            // var x = 1;
+            // for(var k = 0; k < 10; k++){
+            //     numbers.push(x);
+            //     //console.log(x);
+            //     x = x + 1;  
+            // }
+            // var y = numbers[1]
+            // numbers[1] = numbers[3]
+            // numbers[3] = y;
+            // show(numbers);
+
             //prac2-2 10個の順数を生成し，n番目とm番目を入れ替える
             //(nとmは乱数にて決定する)
+            // var n = Math.round(Math.random()*9);
+            // console.log(n);
+            // var m = Math.round(Math.random()*9);
+            // console.log(m);
+
+            // var z = numbers[n];  //n番目とm番目を入れ替える
+            // numbers[n] = numbers[m];
+            // numbers[m] = z;
+            // show(numbers);
             //prac2-3 prac2-2を20回繰り返す（シャッフルプログラムの完成）
 
+            // for(var j = 0; j < 20; j++){
+            //     var n = Math.round(Math.random()*9);
+            //     console.log(n);
+            //     var m = Math.round(Math.random()*9);
+            //     console.log(m);
+
+            //     var z = numbers[n];  //n番目とm番目を入れ替える
+            //     numbers[n] = numbers[m];
+            //     numbers[m] = z;
+            // }
+            // show(numbers);
+
             //prac2-4 10個の乱数を生成し，もう一つの配列を作成し，コピーするプログラム．
+            for(var j = 0; j < 10; j++){
+                var x = Math.round(Math.random()*100);
+                numbers.push(x);
+                console.log(x);
+            }
+            show(numbers);
+            for(var i = 0; i < 10; i++){
+                numbers1[i] = numbers[i]
+                console.log(numbers1[i]);
+            }
+            show(numbers1);
         }
     </script>
 
