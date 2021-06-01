@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed(){ //テーブル内にある数字に2を足す
+            var numbers = [];
+            var total = 0;
+            createTenRandomNumbers(numbers, 5);
+            show(numbers);
+            
+            for(var i = 0; i <= 4; i++){
+                numbers[i] = numbers[i] + 2;
+                console.log(numbers[i]);
+            }
+            show(numbers);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac3</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>

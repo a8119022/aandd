@@ -33,3 +33,10 @@ function createRandomNumbers(array, n){
         console.log(x);
     }
 }
+function createTenRandomNumbers(array, n){
+    for(var i = 0; i < n; i++){
+        var x = Math.round(Math.random()*10);
+        array.push(x);
+        console.log(x);
+    }
+}
