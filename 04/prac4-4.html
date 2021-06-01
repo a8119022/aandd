@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            createOrderedRandomNumbers(numbers, 20);
+            console.log(numbers);
+            show(numbers);
+
+            var x = 25;
+            var lower = 0;
+            var upper = 19;
+
+            for(var i = 0; i < 100; i++){
+                var mid = (lower + upper) / 2;
+                mid = Math.floor(mid);
+                if(upper <= lower + 1){ //見つからなかった場合
+                    show('見つかりませんでした');
+                    break;
+                }
+
+                if(x == numbers[mid]){
+                    show(mid + 1 + '番目');
+                    break; //mid番目で当てた
+                }
+                else if(numbers[mid] <= x){ //mid番目より大きい
+                    lower = mid;
+                }
+                else if(x <= numbers[mid]){ //mid番目より小さい
+                    upper = mid;
+                }
+                
+            }
+            
+            
+            
+            
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>ex4-4</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
