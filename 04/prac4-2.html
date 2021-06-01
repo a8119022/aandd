@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed(){ //配列内の要素で3以上のものを新しい配列に組み込む
+            var numbers1 = [];
+            var numbers2 = [];
+            var total = 0;
+            createTenRandomNumbers(numbers1, 5);
+            show(numbers1);
+
+            for(var i = 0; i <= 4; i++){
+                if(3 <= numbers1[i]){
+                    numbers2.push(numbers1[i]);
+                }
+            }
+            show(numbers2);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac4</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
