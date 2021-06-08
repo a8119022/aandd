@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var numbers = [];
+            createOrderedRandomNumbers(numbers, 100);
+            var startTime = new Date();
+            //処理            
+            //ここに，並び替えのプログラムを書く
+            //処理終わり
+            var endTime = new Date();
+            var time = endTime - startTime;
+            show(time + 'ミリ秒');
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>時間の測定</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
