@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed(){ //選択ソート
+            var numbers = [];
+            var x = 0;
+            var ans;
+            createTenRandomNumbers(numbers, 10);
+            show(numbers);
+
+
+            //min = numbers[0];
+
+            for(var j = 0; j < 10; j++){
+                var min = 1000;
+                var min_Index = 0;
+
+                for(var i = x; i < 10; i++){
+                    if(numbers[i] < min){
+                        min = numbers[i];
+                        min_Index = i;　//条件が合うときのindex番号を入れる
+                    }
+                }
+                ans = numbers[min_Index];
+                numbers[min_Index] = numbers[j];
+                numbers[j] = ans;
+                x = x + 1;
+                show(numbers);
+            }
+        
+
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac5-2</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
