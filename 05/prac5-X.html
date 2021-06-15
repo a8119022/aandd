@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed(){ //選択ソート
+            var numbers = [9];
+            var numbers2 = [5, 8, 13, 16, 22];
+            
+            show(numbers);
+            show(numbers2);
+
+            var x = numbers[0];
+            for(var i = 0; i < numbers2.length; i++){
+                if(numbers2[i] > x){
+                    //iが挿入位置
+                    //全て右側にシフト
+                    for(var j = numbers2.length-1; j >= i; j--){
+                        numbers2[j+1] = numbers2[j];
+                    }
+                    numbers2[i] = x;
+                    break;
+                }
+            }
+            show(numbers);
+            show(numbers2);
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>prac5-1</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
