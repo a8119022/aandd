@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        function runButtonPressed() {
+            var stack = [];
+            var text = document.getElementById('tf1').value;
+            show(text); //入力内容を表示
+            var text1 = text.split('');
+            show(text1); //配列にする
+            var x = [];
+            var y = text1.length;
+            //var text2;
+            
+
+            for(var i = 0; i <= y; i++){
+                //stack.push(text1[i]); 
+                //show(text1.pop()); //1文字ずつ表示
+                //x = text1.pop();
+                x.push(text1.pop());
+            }
+            var text2 = x.join('');
+            show(text2);
+            // var text2 = text1.join('');
+            //show(text2); //文字列にする
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>split</h1>
+    <input id="tf1" type="text">
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
