@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript" src="nouns.js"></script>
+    <script type="text/javascript" src="verbs.js"></script>
+
+    <script>
+            var nouns;
+            var verbs;
+            // var text = []; //毎度配列の中身を空にするために使う関数内に設置する
+
+            $(document).ready(function(){
+                nouns = nounstext.split('\n');
+                verbs = verbstext.split('\n');
+            });
+
+            function runButtonPressed(){
+                
+                for(var i = 0; i <= 100000; i++){
+                    var noun1 = selectone(nouns);
+                    //var noun2 = selectone(nouns);
+                    var verb = selectone(verbs);
+
+                    var main1 = noun1 + verb;
+                    var text1 = main1.split('');
+                    var x = text1.length;
+                    var main2 = change(text1,x);
+                    //console.log(main1);
+                    //console.log(main2);
+
+                    // show(main1);
+                    // show(main2);
+                    judge(main1,main2);
+                }
+                show('終わり');
+
+            }
+
+            function selectone(array){
+                var number = array.length;
+                var index = Math.floor(Math.random() * number);
+                return array[index];
+            }
+
+            function change(array,n){ //回文
+                var text = [];
+                for(var i = 0; i <= n; i++){
+                    text.push(array.pop());
+                }
+                var ans = text.join('');
+                return ans;
+            }
+
+            function judge(main1,main2){
+                if(main1 == main2){
+                    console.log(main1);
+                    console.log(main2);
+                    show(main1);
+                    show(main2);
+                    show('回文です');
+                }
+            }
+            
+            
+
+
+        
+
+    </script>
+
+</head>
+
+<body>
+    <h1>split</h1>
+    <button onclick="runButtonPressed()">run!</button>
+    <p id="res"></p>
+</body>
+
+</html>
