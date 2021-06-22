@@ -14,9 +14,14 @@
         $().ready(function () {
             fruits['apple'] = 'りんご';
             fruits['orange'] = 'みかん';
+            console.log(fruits);
         });
 
         function registerButtonPressed() {
+            var NewEnglish = document.getElementById('tf3').value;
+            var NewJapanese = document.getElementById('tf4').value;
+            fruits[NewEnglish] = NewJapanese;　//新しい単語を登録
+            console.log(fruits);
         }
 
         function runButtonPressed() {
