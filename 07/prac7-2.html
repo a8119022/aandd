@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../jquery.min.js"></script>
+
+    <script>
+        var fruits = {};
+
+        $().ready(function () {
+            fruits['apple'] = 'りんご';
+            fruits['orange'] = 'みかん';
+            fruits['りんご'] = 'apple';
+            fruits['みかん'] = 'orange';
+            console.log(fruits);
+        });
+
+        function registerButtonPressed() {
+            var NewWord1 = document.getElementById('tf3').value;
+            var NewWord2 = document.getElementById('tf4').value;
+            //新規登録
+            fruits[NewWord1] = NewWord2;　//英語から日本語
+            fruits[NewWord2] = NewWord1;　//日本語から英語
+            console.log(fruits);
+        }
+
+        function runButtonPressed() {
+            var english = document.getElementById('tf1').value;
+            var japanese = fruits[english];
+            document.getElementById('tf2').value = japanese;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>登録</h1>
+    単語：<input id="tf3" type="text" value="">
+    <br>
+    意味：<input id="tf4" type="text" value="">
+    <button onclick="registerButtonPressed()">登録!</button>
+    <h1>検索</h1>
+    単語：<input id="tf1" type="text" value="">
+    <br>
+    意味：<input id="tf2" type="text" value="">
+    <button onclick="runButtonPressed()">検索!</button>
+    <p id="res"></p>
+</body>
+
+</html>
