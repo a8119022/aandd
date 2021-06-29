@@ -13,15 +13,33 @@
         osql.requireLogin();
 
         async function runButtonPressed() {
+            var students = {};
             var objects = await osql.connect('select * from Students;');
-            var birthday = objects[0].birthday;
-            var d = new Date(birthday);
-            show(birthday);
-            show(d);
-            show(d.getFullYear());
-            show(d.getMonth() + 1);
-            show(d.getDate());
-            //document.getElementById('res').innerHTML = birthday;
+
+            for(var i = 0; i < objects.length; i++){
+                var birthday = objects[i].birthday;
+                var number = new Date(birthday);
+                var month = number.getMonth() + 1;
+                var day = number.getDate();
+
+                var key = objects[i].name;
+                var birthdays = month + '月' + day + '日';
+
+                students[key] = birthdays;
+                console.log(students);
+            }
+            
+            // var d = new Date(birthday);
+            // show(birthday);
+            // show(d);
+            // show(d.getFullYear());
+            // show(d.getMonth() + 1);
+            // show(d.getDate());
+            // var key = objects[i].name;
+            // var value = objects[i].birthday;
+            // students[key] = value;
+            // console.log(students);
+            document.getElementById('res').innerHTML = JSON.stringify(students, null, '\t');　//JSON形式で取り出す;
         }
 
     </script>

@@ -13,17 +13,26 @@
         osql.requireLogin();
 
         async function runButtonPressed() {
-            var students = [];
+            //var students = [];　//8-2で使用
+            var students = {};
             var objects = await osql.connect('select * from Students;');　//objectsがデータベースから取り出したもの
 
             for(var i = 0; i < objects.length; i++){
-                key1 = objects[i].name;
-                key2 = objects[i].birthday;
-                students.push(key1);
-                students.push(key2)
-                //students[i] = keys;
-                //console.log(key);
+            //     //8-2
+            //     // key1 = objects[i].name;
+            //     // key2 = objects[i].birthday;
+            //     // students.push(key1);
+            //     // students.push(key2)
+            //     // //students[i] = keys;
+                   //console.log(key);
+                // console.log(students);
+
+                //8-3
+                var key = objects[i].name;
+                var value = objects[i].birthday;
+                students[key] = value;
                 console.log(students);
+
             }
             //document.getElementById('res').innerHTML = students;
             document.getElementById('res').innerHTML = JSON.stringify(students, null, '\t');　//JSON形式で取り出す
