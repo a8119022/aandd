@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script type="text/javascript" src="../aandd.js"></script>
+    <script type="text/javascript" src="../osql.js"></script>
+
+    <script>
+        osql.requireLogin();
+
+        async function runButtonPressed() {
+            //var students = {};
+            var answer = 0;
+            //var number = 0;
+            var objects = await osql.connect('select * from Students;');
+
+            for(var i = 0; i < objects.length; i++){
+                var birthday = objects[i].birthday;
+                var birthdays = new Date(birthday)
+                var month = birthdays.getMonth() + 1;
+
+                if(month == 6){
+                    answer = answer + 1;
+                    //number = number + 1;
+                }
+            }
+            //avg = answer / number; 
+            document.getElementById('res').innerHTML = answer + '人';
+            //document.getElementById('res').innerHTML = JSON.stringify(objects, null, '\t');　//JSON形式で取り出す;
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <h1>prac8-5</h1>
+    <h2>6月が誕生日の人</h2>
+    <button onclick="runButtonPressed()">run!</button>
+    <pre id="res"></pre>
+</body>
+
+</html>
