@@ -25,12 +25,12 @@
                 '上島' : '6月5日',
             };
             var studentsC = [];
-            var keys = Object.keys(studentsB);
+            var keys = Object.keys(studentsB);　//オブジェクトのプロパティを取り出している
             for(var i = 0; i < keys.length; i++){
-                var key = keys[i];
+                var key = keys[i];　//その番地にある値を取り出している
                 var student = {};
-                student.name = key;
-                student.birthday = studentsB[key]; 
+                student.name = key;　//そして取り出したkeyを追加
+                student.birthday = studentsB[key]; //値も追加
                 console.log(student);
                 studentsC.push(student);
             }
