@@ -32,7 +32,7 @@
                 student.name = key;　//そして取り出したkeyを追加
                 student.birthday = studentsB[key]; //値も追加
                 console.log(student);
-                studentsC.push(student);
+                studentsC.push(student);　//配列の中に入れる
             }
             document.getElementById('res').innerHTML = JSON.stringify(studentsC, null, '\t');
         }
